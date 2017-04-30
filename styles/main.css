@@ -9,28 +9,157 @@ p {
   color: #2d2d2d;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+:hover {
+  transition: all .2s ease-in;
+  -webkit-transition: all .1 ease-in;
+  -moz-transition: all .1s ease-in;
+  -o-transition: all .1s ease in;
+}
+
 /* TODO: size images manually so this is not necessary */
 img {
   max-height: 20rem;
 }
 
+ul li {
+  list-style: none;
+}
+
 /***************** NAV *****************/
+
+nav {
+  order: 2;
+  float: right;
+  margin-top: 4.7em;
+}
+
+@media only screen and (max-width: 605px) {
+
+   nav {
+      margin: 1em auto;
+   }
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+nav ul li {
+  border-right: .1em solid black;
+}
+
+nav li {
+  padding: .5em;
+}
+
+nav li:last-child {
+  border: none;
+}
 
 nav a:hover {
   text-decoration: underline;
 }
 
+nav li:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 /**************** HERO *****************/
 
+header {
+  border-bottom: .1em solid silver;
+  padding: 1em 2em;
+  margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 605px) {
+
+   header {
+      display: flex;
+      flex-wrap: wrap;
+   }
+}
+
 header img {
+  flex-grow: 0;
+  flex-shrink: 0;
   max-height: 6rem;
+  float: left;
+}
+
+.logo {
+  order: 1;
+  display: flex;
+  align-items: baseline;
 }
 
 h1 .logo-w {
+  font-family: 'Kranky' , cursive;
   font-size: 3.5rem;
+  font-style: italic;
 }
 
+.logo h1 {
+  font-family: 'Lobster' , cursive;
+  font-size: 1.5em;
+  float: left;
+}
+
+@media only screen and (max-width: 684px) {
+
+   .logo h1 {
+      font-size: 1em;
+   }
+   h1 .logo-w {
+     font-family: 'Kranky' , cursive;
+     font-size: 3rem;
+     font-style: italic;
+   }
+}
+
+@media only screen and (max-width: 605px) {
+
+     .logo h1 {
+        font-size: 1.5em;
+     }
+     h1 .logo-w {
+       font-family: 'Kranky' , cursive;
+       font-size: 3.5rem;
+       font-style: italic;
+     }
+  }
 /**************** ASIDE ****************/
+
+aside {
+  flex: 1 0 0;
+  font-family: 'Raleway' , sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: 1em 1em .5em .5em;
+  border-right: .1em solid silver;
+}
+
+aside h3 {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+aside ul {
+  margin-bottom: 2em;
+  border-bottom: .1em solid silver;
+}
+input[type="email"] {
+  width: 95%;
+}
 
 input[type="submit"] {
   padding: .25rem;
@@ -39,13 +168,79 @@ input[type="submit"] {
   border-radius: 5px;
   font-size: .75rem;
   color: white;
+  justify-content: center;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.form-btn {
+  text-align: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 1em;
+}
+
+/*********** SMALL ASIDE ****************/
+
+@media only screen and (max-width: 684px) {
+aside {
+  font-family: 'Raleway' , sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: 1em 1em .5em .5em;
+  border: none;
+}
 }
 
 /*********** PRODUCTS SECTION ***********/
 
-section {
-  padding: 0 .75rem;
+main {
+  display: flex;
+  display: -webkit-flex;
+  max-width: 96%;
+  margin: 0 auto;
 }
+
+.item-container {
+
+}
+
+section {
+ flex: 4 0 0;
+ padding-left: 1em;
+}
+
+section h2 {
+  font-family: 'Raleway' , sans-serif;
+  font-weight: bold;
+}
+
+section h3 {
+  font-family: 'Raleway' , sans-serif;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+
+}
+
+.col {
+  flex: 1;
+  flex-grow: 1;
+  padding: 2em;
+  margin: .5em;
+  /* border: .1em solid black; */
+}
+
 
 h2 {
   padding-top: 1.5rem;
