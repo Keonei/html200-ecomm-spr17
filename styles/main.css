@@ -185,13 +185,9 @@ input[type="checkbox"] {
 
 /*********** SMALL ASIDE ****************/
 
-@media only screen and (max-width: 684px) {
+@media only screen and (max-width: 566px) {
 aside {
-  font-family: 'Raleway' , sans-serif;
-  font-size: 1em;
-  line-height: 1.5em;
-  padding: 1em 1em .5em .5em;
-  border: none;
+  display: none;
 }
 }
 
