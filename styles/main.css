@@ -156,6 +156,7 @@ aside h3 {
 aside ul {
   margin-bottom: 2em;
   border-bottom: .1em solid silver;
+  padding-bottom: 1em;
 }
 input[type="email"] {
   width: 95%;
@@ -177,6 +178,7 @@ input[type="submit"]:hover {
 
 .form-btn {
   text-align: center;
+  margin-top: 1em;
 }
 
 input[type="checkbox"] {
