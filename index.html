@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Kranky" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <!-- TODO: replace with your personal Font Awesome CDN link -->
-  <script src="https://use.fontawesome.com/???.js"></script>
+  <script src="https://use.fontawesome.com/d712fc1d67.js"></script>
 </head>
 
 <body>
@@ -85,12 +85,13 @@
              </label>
            </li>
         </ul>
-        <label>Sign up for our mailing list
-          <input type="email" name="email" placeholder="Enter email">
-        </label>
-        <div class="form-btn">
-          <input type="submit" value="Submit">
-        </div>
+      </form>
+      <form id="form-email">
+          <label for="email">Sign up for our mailing list
+            <input type="email" id="email" name="email" value="" placeholder="Enter email">
+          </label>
+          <div id="form-btn"></div>
+            <input type="submit" value="submit" onclick="subscribeToEmail()">
       </form>
     </aside>
 
@@ -160,6 +161,7 @@
       </div>
     </section>
   </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
