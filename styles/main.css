@@ -34,6 +34,7 @@ ul li {
 /***************** NAV *****************/
 
 nav {
+  color: white;
   order: 2;
   float: right;
   margin-top: 4.7em;
@@ -53,7 +54,7 @@ nav ul {
 }
 
 nav ul li {
-  border-right: .1em solid black;
+  border-right: .1em solid #3d7fcf;
 }
 
 nav li {
@@ -62,6 +63,11 @@ nav li {
 
 nav li:last-child {
   border: none;
+}
+
+nav a {
+  color: white;
+  letter-spacing: .1em;
 }
 
 nav a:hover {
@@ -75,7 +81,8 @@ nav li:hover {
 /**************** HERO *****************/
 
 header {
-  border-bottom: .1em solid silver;
+  /*border-bottom: .1em solid #3d7fcf; */
+  background-color: #3d7fcf;
   padding: 1em 2em;
   margin-bottom: 1em;
 }
@@ -105,11 +112,14 @@ h1 .logo-w {
   font-family: 'Kranky' , cursive;
   font-size: 3.5rem;
   font-style: italic;
+  color: white;
 }
 
 .logo h1 {
   font-family: 'Lobster' , cursive;
   font-size: 1.5em;
+  color: white;
+  letter-spacing: .1em;
   float: left;
 }
 
@@ -117,19 +127,17 @@ h1 .logo-w {
 
    .logo h1 {
       font-size: 1em;
+
    }
    h1 .logo-w {
      font-family: 'Kranky' , cursive;
-     font-size: 3rem;
+     font-size: 2rem;
      font-style: italic;
    }
 }
 
 @media only screen and (max-width: 605px) {
 
-     .logo h1 {
-        font-size: 1.5em;
-     }
      h1 .logo-w {
        font-family: 'Kranky' , cursive;
        font-size: 3.5rem;
