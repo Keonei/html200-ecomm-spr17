@@ -4,6 +4,7 @@
   <title>Winter Scarves</title>
 
   <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" href="styles/main.css">
@@ -22,7 +23,7 @@
         <li><a href="#">Gloves</a></li>
         <li><a href="#">Scarves</a></li>
         <li class="cart-info">
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <i class="fa fa-shopping-cart" data-toggle="modal" data-target="#cartAdd" aria-hidden="true"><span class="badge">0</span></i>
         </li>
       </ul>
     </nav>
@@ -98,70 +99,165 @@
     <section>
       <h2>Scarves</h2>
 
-      <div class="item-container">
+      <div id="item-container" class="item-container">
         <div class="row">
           <div class="col">
             <h3>Reversible Plaid</h3>
             <img src="images/reversible-plaid.jpg" alt="reversible plaid scarf">
-            <p>Two classic patterns in one great look: This supersoft and cozy reversible scarf instantly doubles your street-style cred. 100% acrylic.</p>
-            <p>26.99</p>
+            <p class="prodDescription">Two classic patterns in one great look: This supersoft and cozy reversible scarf instantly doubles your street-style cred. 100% acrylic.</p>
+            <p class="price">26.99</p>
+            <p class="prodId" hidden="hidden">1</p>
+            <!-- Button trigger modal -->
+            <button class="details"  data-toggle="modal" data-target="#myModal" data-whatever="1">Details</button>
+            <button class="cart-add"  data-toggle="modal" data-target="#cartAdd">Want!</button>
           </div>
           <div class="col">
             <h3>Fringed Plaid</h3>
             <img src="images/fringed-plaidw-280.jpg" alt="fringed plaid scarf">
-            <p>Generously sized, extra soft and featuring a dazzling fringe, this scarf is rendered in a versatile gray, black and white plaid. Expertly beat the cold with style. 100% acrylic.</p>
-            <p>18.99</p>
+            <p class="prodDescription">Generously sized, extra soft and featuring a dazzling fringe, this scarf is rendered in a versatile gray, black and white plaid. Expertly beat the cold with style. 100% acrylic.</p>
+            <p class="price">18.99</p>
+            <p class="prodId" hidden="hidden">2</p>
+            <button class="details"  data-toggle="modal" data-target="#myModal" data-whatever="2">Details</button>
+            <button class="cart-add"  data-toggle="modal" data-target="#cartAdd">Want!</button>
           </div>
         </div>
-
         <div class="row">
           <div class="col">
             <h3>Multi Color</h3>
             <img src="images/multi-colorw-280.jpg" alt="multi color scarf">
-            <p>The Who What Where Oversize Color-Block Square Scarf is big, bold, and designed to twist and wrap any way you wish. All the colors of the season are harmonized in this oversize accent, so you can adjust to contrast or match your outfit; soft and lush, it’s your stylish standoff against cold AC and unexpected fall breezes. 100% acrylic.</p>
-            <p>22.99</p>
+            <p class="prodDescription">The Who What Where Oversize Color-Block Square Scarf is big, bold, and designed to twist and wrap any way you wish. All the colors of the season are harmonized in this oversize accent, so you can adjust to contrast or match your outfit; soft and lush, it’s your stylish standoff against cold AC and unexpected fall breezes. 100% acrylic.</p>
+            <p class="price">22.99</p>
+            <p class="prodId" hidden="hidden">3</p>
+            <button class="details"  data-toggle="modal" data-target="#myModal" data-whatever="3">Details</button>
+            <button class="cart-add"  data-toggle="modal" data-target="#cartAdd">Want!</button>
           </div>
           <div class="col">
             <h3>Northern Lights</h3>
             <img src="images/northern-lightsw-280.jpg" alt="northern lights scarf">
-            <p>Handmade by women in Agra, sales provide medical and educational support in this remote area of India. Crinkly 100% cotton.</p>
-            <p>29.99</p>
+            <p class="prodDescription">Handmade by women in Agra, sales provide medical and educational support in this remote area of India. Crinkly 100% cotton.</p>
+            <p class="price">29.99</p>
+            <p class="prodId" hidden="hidden">4</p>
+            <button class="details"  data-toggle="modal" data-target="#myModal" data-whatever="4">Details</button>
+            <button class="cart-add"  data-toggle="modal" data-target="#cartAdd">Want!</button>
           </div>
         </div>
-
         <div class="row">
           <div class="col">
             <h3>Ombre Infinity</h3>
             <img src="images/ombre-infinityw-280.jpg" alt="ombre infinity scarf">
-            <p>A dip-dye effect adds color and dimension to a cozy infinity scarf featuring a soft, chunky knit. 100% acrylic.</p>
-            <p>11.99</p>
+            <p class="prodDescription">A dip-dye effect adds color and dimension to a cozy infinity scarf featuring a soft, chunky knit. 100% acrylic.</p>
+            <p class="price">11.99</p>
+            <p class="prodId" hidden="hidden">5</p>
+            <button class="details"  data-toggle="modal" data-target="#myModal" data-whatever="5">Details</button>
+            <button class="cart-add"  data-toggle="modal" data-target="#cartAdd">Want!</button>
           </div>
           <div class="col">
             <h3>Ashby Twill</h3>
             <img src="images/twillw-328.jpg" alt="ashby twill scarf">
-            <p>Faribault brings you the Ashby Twill Scarf in Natural. Woven with a 'broken' twill technique, the Ashby Twill Scarf has a slight zigzag texture. Made in USA, this timeless scarf is crafted with luxurious merino wool and finished with heather gray fringe. 100% Merino wool.</p>
-            <p>70.99</p>
+            <p class="prodDescription">Faribault brings you the Ashby Twill Scarf in Natural. Woven with a 'broken' twill technique, the Ashby Twill Scarf has a slight zigzag texture. Made in USA, this timeless scarf is crafted with luxurious merino wool and finished with heather gray fringe. 100% Merino wool.</p>
+            <p class="price">70.99</p>
+            <p class="prodId" hidden="hidden">6</p>
+            <button class="details"  data-toggle="modal" data-target="#myModal" data-whatever="6">Details</button>
+            <button class="cart-add"  data-toggle="modal" data-target="#cartAdd">Want!</button>
           </div>
         </div>
-
         <div class="row">
           <div class="col">
             <h3>Wool Cable Knit</h3>
             <img src="images/wool-cable.jpeg" alt="wool cable knit scarf">
-            <p>Warm yourself with this women's natural cable knit scarf, crafted from 100% Merino wool. Imported.</p>
-            <p>49.99</p>
+            <p class="prodDescription">Warm yourself with this women's natural cable knit scarf, crafted from 100% Merino wool. Imported.</p>
+            <p class="price">49.99</p>
+            <p class="prodId" hidden="hidden">7</p>
+            <button class="details"  data-toggle="modal" data-target="#myModal" data-whatever="7">Details</button>
+            <button class="cart-add"  data-toggle="modal" data-target="#cartAdd">Want!</button>
           </div>
           <div class="col">
             <h3>Etro Paisley-Print Silk</h3>
             <img src="images/etrow-280.png" alt="etro paisley print silk scarf">
-            <p>Luxurious silk scarf with subtle paisley pattern. 100% silk.</p>
-            <p>26.99</p>
-          </div>
+            <p class="prodDescription">Luxurious silk scarf with subtle paisley pattern. 100% silk.</p>
+            <p class="price">26.99</p>
+            <p class="prodId" hidden="hidden">8</p>
+            <button class="details"  data-toggle="modal" data-target="#myModal" data-whatever="8">Details</button>
+            <button class="cart-add"  data-toggle="modal" data-target="#cartAdd">Want!</button>
         </div>
       </div>
     </section>
+  <!-- Cart Modal -->
+  <div class="modal fade" id="cartAdd" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Stuff!</h4>
+        </div>
+        <div class="modal-body">
+          <div class="column-labels">
+            <label class="modal-image">Image</label>
+            <label class="price">Price</label>
+            <label class="quantity">Quantity</label>
+            <label class="removal">Remove</label>
+            <label class="product-line-price">Total</label>
+          </div>
+          <div class="product">
+            <div class="modal-image">
+              <img src="images/etrow-280.png">
+          </div>
+          <div class="price">26.99</div>
+          <div class="quantity">
+            <input type="number" value="1" min="1">
+          </div>
+          <div class="removal">
+            <button class="remove-product">Remove</button>
+          </div>
+          <div class="product-line-price">26.99</div>
+        </div>
+          <div class="totals">
+            <div class="totals-item">
+              <label>Subtotal</label>
+              <div class="totals-value" id="cart-subtotal"></div>
+            </div>
+            <div class="totals-item">
+              <label>Tax (10%)</label>
+              <div class="totals-value" id="cart-tax"></div>
+            </div>
+            <div class="totals-item">
+              <label>Shipping</label>
+              <div class="totals-value" id="cart-shipping"></div>
+            </div>
+            <div class="totals-item totals-item-total">
+              <label>Grand Total</label>
+              <div class="totals-value" id="cart-total"></div>
+            </div>
+            </div>
+              <button type="button" class="btn btn-default" onclick="checkOut()">Checkout</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </main>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <p class="modal-id" hidden="hidden"></p>
+          <img src="" alt="" class="modal-image">
+          <p class="modal-description"></p>
+          <p class="modal-price"></p>
+        </div>
+        <div class="modal-footer">
+         <button type="button" class="btn btn-default" onclick="cartAdd">Add to cart</button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
