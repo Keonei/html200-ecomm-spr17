@@ -13,119 +13,104 @@ function subscribeToEmail(event) {
   event.preventDefault;
 };
 
-// Produt Modal
+function refreshBadge() {
 
-// $("modal").on("click", function() {
-//   $("#modal-image").attr('src');
-//   $('#myModal').modal('show');
-// });
+    var badge = $('header').find('.badge');
+    if (cart) {
+      badge.text(cart.length);
+    }
+  }
 
+/* Item Details */
 
-function showDetails(){
+$(".details").on("click", showDetails);
 
-  var prodName = $(this).find("h3").text();
-  var prodPrice = $(this).find(".price").text();
-  var prodDescription = $(this).find(".prodDescription").text();
-  var prodURL = $(this).find("img").attr('src');
+function showDetails () {
 
-  var modalImg = $("modal-image");
-  modalImg.attr("src", prodURL);
+/* looking for specific tag within the parent div, giving it a name and telling jquery to plug it in the modal here */
+  var prodName = $(this.parentElement).find("h3").text();
+  console.log(prodName);
 
-  var modalId = $("modal-id");
-  modalId.text(prodId);
-
-  var title = $("modal-title");
+  var title = $(".modal-title");
   title.text(prodName);
 
-  var modalDescription = $("modal-description");
-  modalDescription.text(prodDescription);
 
-  var modalPrice = $("modal-price");
-  modalPrice.text(prodPrice);
+  var prodDescription = $(this.parentElement).find(".prodDescription").text();
+  console.log(prodDescription);
 
-  $("#myModal").modal('show');
+  var title = $(".modal-description");
+  title.text(prodDescription);
 
+
+  var prodPrice = $(this.parentElement).find(".price").text();
+  console.log(prodPrice);
+
+  var title = $(".modal-price");
+  title.text(prodPrice);
+
+
+  var prodImg = $(this.parentElement).find("img").attr('src');
+  console.log(prodImg);
+
+  var title = $(".modal-image");
+  title.attr('src', prodImg);
+
+
+  var detailDialog = ("#myModal");
+  // detailDialog.modal('show');
+  console.log(detailDialog);
 }
+
 
 // cart
 
-function checkOut(){
-/* Set rates + misc */
-var taxRate = 0.10;
-var shippingRate = 5.00;
-var fadeTime = 300;
+// $(".cart-add").on("click", addToCart);
+//
+// function addToCart () {
+//
+// /* looking for specific tag within the parent div, giving it a name and telling jquery to plug it in the modal here */
+//   var prodName = $(this.parentElement).find("h3").text();
+//   console.log(prodName);
+//
+//   var title = $(".prod-title");
+//   title.text(prodName);
+//
+//
+//   var prodPrice = $(this.parentElement).find(".price").text();
+//   console.log(prodPrice);
+//
+//   var title = $(".modal-price");
+//   title.text(prodPrice);
+//
+//
+//   var prodImg = $(this.parentElement).find("img").attr('src');
+//   console.log(prodImg);
+//
+//   var title = $(".prod-image");
+//   title.attr('src', prodImg);
+//
+//
+//   var cartDialog = ("#cartModal");
+//   // cartDialog.modal('show');
+//   console.log(cartDialog);
+//
+// }
 
+var cart = [];
 
-/* Assign actions */
-$('.quantity input').change( function() {
-  updateQuantity(this);
-});
-
-$('.removal button').click( function() {
-  removeItem(this);
-});
-
-
-/* Recalculate cart */
-function recalculateCart()
-{
-  var subtotal = 0;
-
-  /* Sum up row totals */
-  $('.product').each(function () {
-    subtotal += parseFloat($(this).children('.product-line-price').text());
-  });
-
-  /* Calculate totals */
-  var tax = subtotal * taxRate;
-  var shipping = (subtotal > 0 ? shippingRate : 0);
-  var total = subtotal + tax + shipping;
-
-  /* Update totals display */
-  $('.totals-value').fadeOut(fadeTime, function() {
-    $('#cart-subtotal').html(subtotal.toFixed(2));
-    $('#cart-tax').html(tax.toFixed(2));
-    $('#cart-shipping').html(shipping.toFixed(2));
-    $('#cart-total').html(total.toFixed(2));
-    if(total == 0){
-      $('.checkout').fadeOut(fadeTime);
-    }else{
-      $('.checkout').fadeIn(fadeTime);
-    }
-    $('.totals-value').fadeIn(fadeTime);
-  });
-}
+function addToCart () {
+  event.preventDefault();
+  cart.push("item");
+  console.log("You have " + cart.length + " items in your cart.");
 }
 
-/* Update quantity */
-function updateQuantity(quantityInput)
-{
-  /* Calculate line price */
-  var productRow = $(quantityInput).parent().parent();
-  var price = parseFloat(productRow.children('.price').text());
-  var quantity = $(quantityInput).val();
-  var linePrice = price * quantity;
+function removeFromCart () {
+  event.preventDefault ();
+  if (cart.length > 0) {
+    cart.pop("item");
+    console.log("You now have " + cart.length + " items in your cart.");
 
-  /* Update line price display and recalc cart totals */
-  productRow.children('.product-line-price').each(function () {
-    $(this).fadeOut(fadeTime, function() {
-      $(this).text(linePrice.toFixed(2));
-      recalculateCart();
-      $(this).fadeIn(fadeTime);
-    });
-  });
-}
-
-
-/* Remove item from cart */
-function removeItem(removeButton)
-{
-  /* Remove row from DOM and recalc cart total */
-  var productRow = $(removeButton).parent().parent();
-  productRow.slideUp(fadeTime, function() {
-    productRow.remove();
-    recalculateCart();
-  });
+  }
 }
 
 // product load
