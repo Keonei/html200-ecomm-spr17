@@ -180,7 +180,8 @@
             <button class="cart-add" onclick="addToCart">Want!</button>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   <!-- Cart Modal -->
   <div class="modal fade" id="cartModal" role="dialog">
     <div class="modal-dialog">
@@ -201,44 +202,41 @@
           </div>
           <div class="product">
             <div class="prod-image">
-              <img class="prod-image" src="">
+              <img class="prod-image" src="images/reversible-plaid.jpg" alt="reversible plaid scarf">
             </div>
-          </div>
-          <div class="prod-title"></div>
-          <div class="modal-price"></div>
-          <div class="prod-quantity">
-            <input type="number" value="1" min="1">
-          </div>
-          <div class="prod-removal">
+            <div class="prod-title"></div>
+            <div class="modal-price"></div>
+            <div class="prod-quantity">
+              <input type="number" value="1" min="1">
+            </div>
+            <div class="prod-removal">
             <button class="remove-product">&times;</button>
+            </div>
+            <div class="prod-line-price"></div>
           </div>
-          <div class="prod-line-price"></div>
         </div>
-          <div class="totals">
-            <div class="totals-item">
-              <label>Subtotal</label>
+        <div class="totals">
+          <div class="totals-item">
+            <label>Subtotal</label>
               <div class="totals-value" id="cart-subtotal"></div>
-            </div>
-            <div class="totals-item">
-              <label>Tax (10%)</label>
+          </div>
+          <div class="totals-item">
+            <label>Tax (10%)</label>
               <div class="totals-value" id="cart-tax"></div>
-            </div>
-            <div class="totals-item">
-              <label>Shipping</label>
+          </div>
+          <div class="totals-item">
+            <label>Shipping</label>
               <div class="totals-value" id="cart-shipping"></div>
-            </div>
-            <div class="totals-item totals-item-total">
-              <label>Grand Total</label>
+          </div>
+          <div class="totals-item totals-item-total">
+            <label>Grand Total</label>
               <div class="totals-value" id="cart-total"></div>
-            </div>
-            </div>
-              <button class="checkout">Checkout</button>
-            </div>
+          </div>
+            <button class="checkout">Checkout</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </main>
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
@@ -250,13 +248,13 @@
         </div>
         <div class="modal-body">
           <p class="modal-id" hidden="hidden"></p>
-          <img class="modal-image" src="" alt="" >
+          <img class="modal-image" src="images/reversible-plaid.jpg" alt="reversible plaid scarf">
           <p class="modal-description"></p>
           <p class="modal-price"></p>
         </div>
         <div class="modal-footer">
          <button type="button" class="btn btn-default" onclick="addToCart">Add to cart</button>
-      </div>
+        </div>
       </div>
     </div>
   </div>
