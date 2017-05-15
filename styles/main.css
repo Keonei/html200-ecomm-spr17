@@ -399,6 +399,10 @@ h3 {
     border-radius: 3px;
   }
 
+.total {
+  padding: 15px;
+}
+
 .totals .totals-item {
     float: right;
     clear: both;
@@ -427,7 +431,7 @@ h3 {
 .checkout {
   float: right;
   border: 0;
-  margin: 1em 0;
+  margin: 1em;
   padding: 6px 25px;
   color: #fff;
   font-size: 1.2em;

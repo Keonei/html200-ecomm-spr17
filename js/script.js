@@ -104,6 +104,7 @@ function addToCart () {
   console.log("You have " + cart.length + " items in your cart.");
 }
 
+
 function removeFromCart () {
   event.preventDefault ();
   if (cart.length > 0) {
@@ -111,7 +112,17 @@ function removeFromCart () {
     console.log("You now have " + cart.length + " items in your cart.");
 
   }
+
+  refreshBadge();
+
 }
+
+function refreshBadge() {
+    var badge = $('header').find('.badge');
+    if (cart) {
+      badge.text(cart.length);
+    }
+  }
 
 // product load
 
