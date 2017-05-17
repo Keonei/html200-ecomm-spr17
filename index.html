@@ -4,6 +4,7 @@
   <title>Winter Scarves</title>
 
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrom=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="styles/reset.css">
@@ -193,11 +194,11 @@
         <div class="shopping-cart">
         <div class="modal-body">
           <div class="column-labels">
-            <label class="prod-image">Image</label>
-            <label class="prod-item">Item</label>
-            <label class="prod-price">Price</label>
-            <label class="prod-quantity">Quantity</label>
-            <label class="prod-removal">Remove</label>
+            <label class="cart-image">Image</label>
+            <label class="cart-item">Item</label>
+            <label class="cart-price">Price</label>
+            <label class="cart-quantity">Quantity</label>
+            <label class="cart-removal">Remove</label>
             <label class="prod-line-price">Total</label>
           </div>
           <div class="product">
@@ -250,10 +251,11 @@
           <p class="modal-id" hidden="hidden"></p>
           <img class="modal-image" src="images/reversible-plaid.jpg" alt="reversible plaid scarf">
           <p class="modal-description"></p>
-          <p class="modal-price"></p>
+
         </div>
         <div class="modal-footer">
-         <button type="button" class="btn btn-default" onclick="addToCart">Add to cart</button>
+                    <p class="modal-price"></p>
+         <button type="button" class="cart-add" onclick="addToCart">Add to cart</button>
         </div>
       </div>
     </div>

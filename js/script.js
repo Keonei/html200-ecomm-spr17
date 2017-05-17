@@ -13,14 +13,6 @@ function subscribeToEmail(event) {
   event.preventDefault;
 };
 
-function refreshBadge() {
-
-    var badge = $('header').find('.badge');
-    if (cart) {
-      badge.text(cart.length);
-    }
-  }
-
 /* Item Details */
 
 $(".details").on("click", showDetails);
@@ -34,95 +26,66 @@ function showDetails () {
   var title = $(".modal-title");
   title.text(prodName);
 
-
   var prodDescription = $(this.parentElement).find(".prodDescription").text();
   console.log(prodDescription);
 
-  var title = $(".modal-description");
-  title.text(prodDescription);
-
+  var description = $(".modal-description");
+  description.text(prodDescription);
 
   var prodPrice = $(this.parentElement).find(".price").text();
   console.log(prodPrice);
 
-  var title = $(".modal-price");
-  title.text(prodPrice);
+  var price = $(".modal-price");
+  price.text(prodPrice);
 
+  var prodId = $(this.parentElement).find("prodId").text();
+  console.log(prodId);
+
+  var id = $(".modal-id");
+  id.text(prodId);
 
   var prodImg = $(this.parentElement).find("img").attr('src');
   console.log(prodImg);
 
-  var title = $(".modal-image");
-  title.attr('src', prodImg);
-
+  var img = $(".modal-image");
+  img.attr('src', prodImg);
 
   var detailDialog = ("#myModal");
   // detailDialog.modal('show');
   console.log(detailDialog);
-}
+};
 
 
-// cart
 
+// var cart = [];
+//
 // $(".cart-add").on("click", addToCart);
 //
 // function addToCart () {
-//
-// /* looking for specific tag within the parent div, giving it a name and telling jquery to plug it in the modal here */
-//   var prodName = $(this.parentElement).find("h3").text();
-//   console.log(prodName);
-//
-//   var title = $(".prod-title");
-//   title.text(prodName);
+//   event.preventDefault();
+//   cart.push(".item");
+//   console.log("You have " + cart.length + " items in your cart.");
+// }
 //
 //
-//   var prodPrice = $(this.parentElement).find(".price").text();
-//   console.log(prodPrice);
+// function removeFromCart () {
+//   event.preventDefault ();
+//   if (cart.length > 0) {
+//     cart.pop(".item");
+//     console.log("You now have " + cart.length + " items in your cart.");
 //
-//   var title = $(".modal-price");
-//   title.text(prodPrice);
+//   }
 //
-//
-//   var prodImg = $(this.parentElement).find("img").attr('src');
-//   console.log(prodImg);
-//
-//   var title = $(".prod-image");
-//   title.attr('src', prodImg);
-//
-//
-//   var cartDialog = ("#cartModal");
-//   // cartDialog.modal('show');
-//   console.log(cartDialog);
+//   refreshBadge();
 //
 // }
-
-var cart = [];
-
-function addToCart () {
-  event.preventDefault();
-  cart.push("item");
-  console.log("You have " + cart.length + " items in your cart.");
-}
-
-
-function removeFromCart () {
-  event.preventDefault ();
-  if (cart.length > 0) {
-    cart.pop("item");
-    console.log("You now have " + cart.length + " items in your cart.");
-
-  }
-
-  refreshBadge();
-
-}
-
-function refreshBadge() {
-    var badge = $('header').find('.badge');
-    if (cart) {
-      badge.text(cart.length);
-    }
-  }
+//
+// function refreshBadge() {
+//     var badge = $('header').find('.badge');
+//     if (cart) {
+//       badge.text(cart.length);
+//     }
+//   }
 
 // product load
 
@@ -192,3 +155,98 @@ var products = [
     "imageAlt": "etro paisley print silk scarf",
   }
 ]
+
+
+// cart
+
+var cart = []
+
+$(".cart-add").on("click", addToCart);
+
+function addToCart () {
+event.preventDefault();
+
+/* looking for specific tag within the parent div, giving it a name and telling jquery to plug it in the modal here */
+var itemName = $(this.parentElement).find("h3").text();
+console.log(itemName);
+
+var itemTitle = $(".prod-title");
+itemTitle.text(itemName);
+
+var cartPrice = $(this.parentElement).find(".price").text();
+console.log(cartPrice);
+
+var price = $(".modal-price");
+price.text(cartPrice);
+
+var cartImg = $(this.parentElement).find("img").attr('src');
+console.log(cartImg);
+
+var img = $(".prod-image");
+img.attr('src', cartImg);
+
+var cartDialog = ("#cartModal");
+// cartDialog.modal('show');
+console.log(cartDialog);
+
+};
+
+var taxRate = 0.10;
+var shippingRate = 5.00;
+var fadeTime = 300;
+
+$(".prod-quantity input").change(function() {
+  updateQuantity(this);
+});
+
+$(".prod-removal button").click(function() {
+  removeitem(this);
+});
+
+function recalculateCart() {
+
+  var subtotal = 0;
+
+  $(".product").each(function() {
+    subtotal += parseFloat($(this).children(".prod-line-price").text());
+  });
+
+var tax = subtotal * taxRate;
+var shipping = (subtotal > 0 ? shippingRate : 0);
+var total = subtotal + tax + shipping;
+
+$(".totals-value").fadeOut(fadeTime, function() {
+  $("#cart-subtotal").html(subtotal.toFixed(2));
+  $("#cart-tax").html(tax.toFixed(2));
+  $("#cart-shipping").html(shipping.toFixed(2));
+  $("#cart-total").html(total.toFixed(2));
+  if(total == 0) {
+    $(".checkout").fadeOut(fadeTime);
+  } else {
+    $(".checkout").fadeIn(fadeTime);
+  }
+  $(".total-value").fadeIn(fadeTime);
+});
+}
+
+function updateQuantity(quantityInput) {
+  var productRow = $(quantityInput).parent().parent();
+  var price = parseFloat(productRow.children(".modal-price").text());
+  var quantity = $(quantityInput).val();
+  var linePrice = price * quantity;
+
+  productRow.children(".prod-line-price").each(function () {
+    $(this).fadeOut(fadeTime, function() {
+      $(this).text(linePrice.toFixed(2));
+      recalculateCart();
+      $(this).fadeIn(fadeTime);
+    });
+  });
+}
+
+function removeItem(remveButton) {
+  var productRow = $(removeButton).parent().parent();
+  productRow.slideUp(fadeTime, function() {
+    productRow.remove();
+  });
+}
