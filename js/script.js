@@ -149,27 +149,17 @@ var cartPrice = $(this.parentElement).find(".price").text();
 var price = $(".modal-price");
 //
 // //Item Image //
-var cartImg = $(this.parentElement).find("img").attr('src');
+// var cartImg = $(this.parentElement).find("img").attr('src');
+var cartImg = document.getElementsByTagName("img").attr('src');
+console.log(cartImg);
 var img = $(".prod-image");
 
 itemTitle.text(itemName);
 price.text(cartPrice);
 img.attr('src', cartImg);
 
+}
 
-function removeItem(itemName) {
-    // go through items in cart
-  for (var i in cart) {
-    // match on name (change this if you are using id)
-    if (cart[i].id == itemName) {
-        // remove the item from array
-      cart.splice(i, 1);
-        // bail out of the loop.  only remove one item with matching name
-        break;
-    }
-  }
-}
-}
 var taxRate = 0.10;
 var shippingRate = 5.00;
 
@@ -178,7 +168,7 @@ $(".prod-quantity input").change(function() {
 });
 
 $(".prod-removal button").click(function() {
-  removeitem(this);
+  removeItem(this);
 });
 
 function recalculateCart() {
