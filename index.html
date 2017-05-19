@@ -191,8 +191,8 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4>Stuff!</h4>
         </div>
-        <div class="shopping-cart">
-        <div class="modal-body">
+          <div id="shopping-cart">
+            <div class="modal-body">
           <div class="column-labels">
             <label class="cart-image">Image</label>
             <label class="cart-item">Item</label>
@@ -202,21 +202,20 @@
             <label class="prod-line-price">Total</label>
           </div>
           <div class="product">
-            <div class="prod-image">
-              <img class="prod-image" src="images/reversible-plaid.jpg" alt="reversible plaid scarf">
-            </div>
+            <div class="cart-id" hidden="hidden"></div>
+            <img class="prod-image" src="images/reversible-plaid.jpg" alt="reversible plaid scarf">
             <div class="prod-title"></div>
             <div class="modal-price"></div>
             <div class="prod-quantity">
               <input type="number" value="1" min="1">
             </div>
             <div class="prod-removal">
-            <button class="remove-product">&times;</button>
+              <button class="remove-product" onclick="removeItem">&times;</button>
             </div>
             <div class="prod-line-price"></div>
           </div>
         </div>
-        <div class="totals">
+            <div class="totals">
           <div class="totals-item">
             <label>Subtotal</label>
               <div class="totals-value" id="cart-subtotal"></div>
@@ -236,7 +235,7 @@
             <button class="checkout">Checkout</button>
           </div>
         </div>
-      </div>
+          </div>
     </div>
   </main>
   <!-- Modal -->
@@ -251,10 +250,9 @@
           <p class="modal-id" hidden="hidden"></p>
           <img class="modal-image" src="images/reversible-plaid.jpg" alt="reversible plaid scarf">
           <p class="modal-description"></p>
-
         </div>
         <div class="modal-footer">
-                    <p class="modal-price"></p>
+         <p class="modal-price"></p>
          <button type="button" class="cart-add" onclick="addToCart">Add to cart</button>
         </div>
       </div>

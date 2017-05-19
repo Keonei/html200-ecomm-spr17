@@ -1,3 +1,4 @@
+
 // Mailing List
 
 function subscribeToEmail(event) {
@@ -56,40 +57,9 @@ function showDetails () {
 };
 
 
-
-// var cart = [];
-//
-// $(".cart-add").on("click", addToCart);
-//
-// function addToCart () {
-//   event.preventDefault();
-//   cart.push(".item");
-//   console.log("You have " + cart.length + " items in your cart.");
-// }
-//
-//
-// function removeFromCart () {
-//   event.preventDefault ();
-//   if (cart.length > 0) {
-//     cart.pop(".item");
-//     console.log("You now have " + cart.length + " items in your cart.");
-//
-//   }
-//
-//   refreshBadge();
-//
-// }
-//
-// function refreshBadge() {
-//     var badge = $('header').find('.badge');
-//     if (cart) {
-//       badge.text(cart.length);
-//     }
-//   }
-
 // product load
 
-var products = [
+var cart = [
   {
     "id": 1,
     "name": "Reversible Plaid",
@@ -158,42 +128,50 @@ var products = [
 
 
 // cart
+function addToCart(itemName) {
+    // go through items in cart
+  for (var i in cart) {
+    // match on name (change this if you are using id)
+    if (cart[i].name == itemName) {
+        // remove the item from array
+      cart.push(i, 1);
+        // bail out of the loop.  only remove one item with matching name
+        break;
+    }
+  }
 
-var cart = []
-
-$(".cart-add").on("click", addToCart);
-
-function addToCart () {
-event.preventDefault();
-
-/* looking for specific tag within the parent div, giving it a name and telling jquery to plug it in the modal here */
+// Item Name //
 var itemName = $(this.parentElement).find("h3").text();
-console.log(itemName);
-
 var itemTitle = $(".prod-title");
-itemTitle.text(itemName);
-
+//
+// // Item Price //
 var cartPrice = $(this.parentElement).find(".price").text();
-console.log(cartPrice);
-
 var price = $(".modal-price");
-price.text(cartPrice);
-
+//
+// //Item Image //
 var cartImg = $(this.parentElement).find("img").attr('src');
-console.log(cartImg);
-
 var img = $(".prod-image");
+
+itemTitle.text(itemName);
+price.text(cartPrice);
 img.attr('src', cartImg);
 
-var cartDialog = ("#cartModal");
-// cartDialog.modal('show');
-console.log(cartDialog);
 
-};
-
+function removeItem(itemName) {
+    // go through items in cart
+  for (var i in cart) {
+    // match on name (change this if you are using id)
+    if (cart[i].id == itemName) {
+        // remove the item from array
+      cart.splice(i, 1);
+        // bail out of the loop.  only remove one item with matching name
+        break;
+    }
+  }
+}
+}
 var taxRate = 0.10;
 var shippingRate = 5.00;
-var fadeTime = 300;
 
 $(".prod-quantity input").change(function() {
   updateQuantity(this);
@@ -215,17 +193,11 @@ var tax = subtotal * taxRate;
 var shipping = (subtotal > 0 ? shippingRate : 0);
 var total = subtotal + tax + shipping;
 
-$(".totals-value").fadeOut(fadeTime, function() {
+  $(".totals-value").html(function() {
   $("#cart-subtotal").html(subtotal.toFixed(2));
   $("#cart-tax").html(tax.toFixed(2));
   $("#cart-shipping").html(shipping.toFixed(2));
   $("#cart-total").html(total.toFixed(2));
-  if(total == 0) {
-    $(".checkout").fadeOut(fadeTime);
-  } else {
-    $(".checkout").fadeIn(fadeTime);
-  }
-  $(".total-value").fadeIn(fadeTime);
 });
 }
 
@@ -236,17 +208,40 @@ function updateQuantity(quantityInput) {
   var linePrice = price * quantity;
 
   productRow.children(".prod-line-price").each(function () {
-    $(this).fadeOut(fadeTime, function() {
       $(this).text(linePrice.toFixed(2));
       recalculateCart();
-      $(this).fadeIn(fadeTime);
-    });
   });
 }
 
-function removeItem(remveButton) {
+function removeItem(removeButton) {
   var productRow = $(removeButton).parent().parent();
-  productRow.slideUp(fadeTime, function() {
+  productRow.slideUp(function() {
     productRow.remove();
   });
 }
+
+
+//cart badge //
+
+$cart = $('.badge');
+$cartIcon = $('.fa fa-shopping-cart fa-lg');
+$cartQty = $cart.html();
+
+flag = false;
+$('#cartModal').click(function(e){
+
+  if (flag) {
+    return;
+  }
+  flag = true;
+
+  //ajax code here
+  $cartQty++;
+  $cart.html($cartQty);
+
+  setTimeout (function(){
+  $cartIcon.removeClass('.badge');
+
+    flag = false;
+  });
+});
