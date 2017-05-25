@@ -18,17 +18,18 @@
 
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="#">Hats</a></li>
-        <li><a href="#">Gloves</a></li>
-        <li><a href="#">Scarves</a></li>
-        <li class="cart-info">
-          <i class="fa fa-shopping-cart fa-lg" data-toggle="modal" data-target="#cartModal" aria-hidden="true"><span class="badge">0</span></i>
-        </li>
-      </ul>
-    </nav>
-    <div class="logo">
+  <nav>
+    <ul>
+      <li><a href="#">Hats</a></li>
+      <li><a href="#">Gloves</a></li>
+      <li><a href="#">Scarves</a></li>
+      <li class="cart-info">
+        <i class="fa fa-shopping-cart fa-lg" data-toggle="modal" data-target="#cartModal" aria-hidden="true"><span
+            class="badge">0</span></i>
+      </li>
+    </ul>
+  </nav>
+  <div class="logo">
     <img src="images/logo-scarfcatw-52.png" alt="dapper cartoon cat wearing a scarf">
     <h1>
       <span class="logo-w">W</span>inter
@@ -36,153 +37,82 @@
       <span class="logo-w">W</span>arehouse
     </h1>
   </div>
-  </header>
+</header>
 
-  <main>
-    <aside>
-      <form>
-        <h3>Design</h3>
-          <ul>
-            <li>
-              <label>
-                <input type="checkbox" name="checkbox" value="plaid">Plaid
-              </label>
-            </li>
-            <li>
-             <label>
-               <input type="checkbox" name="checkbox" value="solid">Solid
-             </label>
-           </li>
-           <li>
-             <label>
-               <input type="checkbox" name="checkbox" value="print">Print
-             </label>
-           </li>
-           <li>
-             <label>
-               <input type="checkbox" name="checkbox" value="floral">Floral
-             </label>
-           </li>
-        </ul>
-        <h3>Style</h3>
-          <ul>
-            <li>
-              <label>
-                <input type="checkbox" name="checkbox" value="thin">Thin
-              </label>
-            </li>
-            <li>
-             <label>
-               <input type="checkbox" name="checkbox" value="Wide">Wide
-             </label>
-           </li>
-           <li>
-             <label>
-               <input type="checkbox" name="checkbox" value="short">Short
-             </label>
-           </li>
-           <li>
-             <label>
-               <input type="checkbox" name="checkbox" value="long">Long
-             </label>
-           </li>
-        </ul>
-      </form>
-      <form id="form-email">
-          <label for="email">Sign up for our mailing list
-            <input type="email" id="email" name="email" value="" placeholder="Enter email">
+<main>
+  <aside>
+    <form>
+      <h3>Design</h3>
+      <ul>
+        <li>
+          <label>
+            <input type="checkbox" name="checkbox" value="plaid">Plaid
           </label>
-          <div id="form-btn"></div>
-            <input type="submit" value="submit" onclick="subscribeToEmail()">
-      </form>
-    </aside>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="checkbox" value="solid">Solid
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="checkbox" value="print">Print
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="checkbox" value="floral">Floral
+          </label>
+        </li>
+      </ul>
+      <h3>Style</h3>
+      <ul>
+        <li>
+          <label>
+            <input type="checkbox" name="checkbox" value="thin">Thin
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="checkbox" value="Wide">Wide
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="checkbox" value="short">Short
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="checkbox" value="long">Long
+          </label>
+        </li>
+      </ul>
+    </form>
+    <form id="form-email">
+      <label for="email">Sign up for our mailing list
+        <input type="email" id="email" name="email" value="" placeholder="Enter email">
+      </label>
+      <div id="form-btn"></div>
+      <input type="submit" value="submit" onclick="subscribeToEmail()">
+    </form>
+  </aside>
 
-    <section>
-      <h2>Scarves</h2>
+  <section>
+    <h2>Scarves</h2>
 
-      <div id="item-container" class="item-container">
-        <div class="row">
-          <div class="col item">
-            <h3>Reversible Plaid</h3>
-            <img src="images/reversible-plaid.jpg" alt="reversible plaid scarf">
-            <p class="prodDescription">Two classic patterns in one great look: This supersoft and cozy reversible scarf instantly doubles your street-style cred. 100% acrylic.</p>
-            <p class="price">26.99</p>
-            <p class="prodId" hidden="hidden">1</p>
-            <button class="details"  onclick="showDetails" data-toggle="modal" data-target="#myModal" data-whatever="1">Details</button>
-            <button class="cart-add" onclick="addToCart">Want!</button>
-          </div>
-          <div class="col item">
-            <h3>Fringed Plaid</h3>
-            <img src="images/fringed-plaidw-280.jpg" alt="fringed plaid scarf">
-            <p class="prodDescription">Generously sized, extra soft and featuring a dazzling fringe, this scarf is rendered in a versatile gray, black and white plaid. Expertly beat the cold with style. 100% acrylic.</p>
-            <p class="price">18.99</p>
-            <p class="prodId" hidden="hidden">2</p>
-            <button class="details"  onclick="showDetails" data-toggle="modal" data-target="#myModal" data-whatever="1">Details</button>
-            <button class="cart-add" onclick="addToCart">Want!</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col item">
-            <h3>Multi Color</h3>
-            <img src="images/multi-colorw-280.jpg" alt="multi color scarf">
-            <p class="prodDescription">The Who What Where Oversize Color-Block Square Scarf is big, bold, and designed to twist and wrap any way you wish. All the colors of the season are harmonized in this oversize accent, so you can adjust to contrast or match your outfit; soft and lush, it’s your stylish standoff against cold AC and unexpected fall breezes. 100% acrylic.</p>
-            <p class="price">22.99</p>
-            <p class="prodId" hidden="hidden">3</p>
-            <button class="details"  onclick="showDetails" data-toggle="modal" data-target="#myModal" data-whatever="1">Details</button>
-            <button class="cart-add" onclick="addToCart">Want!</button>
-          </div>
-          <div class="col item">
-            <h3>Northern Lights</h3>
-            <img src="images/northern-lightsw-280.jpg" alt="northern lights scarf">
-            <p class="prodDescription">Handmade by women in Agra, sales provide medical and educational support in this remote area of India. Crinkly 100% cotton.</p>
-            <p class="price">29.99</p>
-            <p class="prodId" hidden="hidden">4</p>
-            <button class="details"  onclick="showDetails" data-toggle="modal" data-target="#myModal" data-whatever="1">Details</button>
-            <button class="cart-add" onclick="addToCart">Want!</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col item">
-            <h3>Ombre Infinity</h3>
-            <img src="images/ombre-infinityw-280.jpg" alt="ombre infinity scarf">
-            <p class="prodDescription">A dip-dye effect adds color and dimension to a cozy infinity scarf featuring a soft, chunky knit. 100% acrylic.</p>
-            <p class="price">11.99</p>
-            <p class="prodId" hidden="hidden">5</p>
-            <button class="details"  onclick="showDetails" data-toggle="modal" data-target="#myModal" data-whatever="1">Details</button>
-            <button class="cart-add" onclick="addToCart">Want!</button>
-          </div>
-          <div class="col item">
-            <h3>Ashby Twill</h3>
-            <img src="images/twillw-328.jpg" alt="ashby twill scarf">
-            <p class="prodDescription">Faribault brings you the Ashby Twill Scarf in Natural. Woven with a 'broken' twill technique, the Ashby Twill Scarf has a slight zigzag texture. Made in USA, this timeless scarf is crafted with luxurious merino wool and finished with heather gray fringe. 100% Merino wool.</p>
-            <p class="price">70.99</p>
-            <p class="prodId" hidden="hidden">6</p>
-            <button class="details"  onclick="showDetails" data-toggle="modal" data-target="#myModal" data-whatever="1">Details</button>
-            <button class="cart-add" onclick="addToCart">Want!</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col item">
-            <h3>Wool Cable Knit</h3>
-            <img src="images/wool-cable.jpeg" alt="wool cable knit scarf">
-            <p class="prodDescription">Warm yourself with this women's natural cable knit scarf, crafted from 100% Merino wool. Imported.</p>
-            <p class="price">49.99</p>
-            <p class="prodId" hidden="hidden">7</p>
-            <button class="details"  onclick="showDetails" data-toggle="modal" data-target="#myModal" data-whatever="1">Details</button>
-            <button class="cart-add" onclick="addToCart">Want!</button>
-          </div>
-          <div class="col item">
-            <h3>Etro Paisley-Print Silk</h3>
-            <img src="images/etrow-280.png" alt="etro paisley print silk scarf">
-            <p class="prodDescription">Luxurious silk scarf with subtle paisley pattern. 100% silk.</p>
-            <p class="price">249.99</p>
-            <p class="prodId" hidden="hidden">8</p>
-            <button class="details"  onclick="showDetails" data-toggle="modal" data-target="#myModal" data-whatever="1">Details</button>
-            <button class="cart-add" onclick="addToCart">Want!</button>
-        </div>
+    <div id="items-container" class="item-container row">
+      <div id="item-template" class="col-xs-6 item">
+        <h3 class="item-title">Title</h3>
+        <img class="item-image" src="images/ " alt="text" />
+        <p class="prodDescription">Description</p>
+        <p class="price">Price</p>
+        <button class="details" data-toggle="modal" data-target="#detailModal">Details</button>
+        <button class="cart-add" data-toggle="modal" data-target="#cartModal">Want!</button>
       </div>
     </div>
   </section>
+
   <!-- Cart Modal -->
   <div class="modal fade" id="cartModal" role="dialog">
     <div class="modal-dialog">
@@ -191,55 +121,57 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4>Stuff!</h4>
         </div>
-          <div id="shopping-cart">
-            <div class="modal-body">
-          <div class="column-labels">
-            <label class="cart-image">Image</label>
-            <label class="cart-item">Item</label>
-            <label class="cart-price">Price</label>
-            <label class="cart-quantity">Quantity</label>
-            <label class="cart-removal">Remove</label>
-            <label class="prod-line-price">Total</label>
-          </div>
-          <div class="product">
-            <div class="cart-id" hidden="hidden"></div>
-            <img class="prod-image" src="images/reversible-plaid.jpg" alt="reversible plaid scarf">
-            <div class="prod-title"></div>
-            <div class="modal-price"></div>
-            <div class="prod-quantity">
-              <input type="number" value="1" min="1">
+        <div id="shopping-cart">
+          <div class="modal-body">
+            <div class="column-labels">
+              <label class="cart-image">Image</label>
+              <label class="cart-item">Item</label>
+              <label class="cart-price">Price</label>
+              <label class="cart-quantity">Quantity</label>
+              <label class="cart-removal">Remove</label>
+              <label class="prod-line-price">Total</label>
             </div>
-            <div class="prod-removal">
-              <button class="remove-product" onclick="removeItem">&times;</button>
+            <div id="cart-items"></div>
+            <div class="row" id="cart-item-template">
+              <img class="prod-image" src="images/reversible-plaid.jpg" alt="alt">
+              <div class="prod-title">Title</div>
+              <div class="modal-price">Price</div>
+              <div class="prod-quantity">
+                <input type="number" min="1">
+              </div>
+              <div class="prod-removal">
+                <button class="remove-product">&times;</button>
+              </div>
+              <div class="prod-line-price">Line Price</div>
             </div>
-            <div class="prod-line-price"></div>
           </div>
-        </div>
-            <div class="totals">
-          <div class="totals-item">
-            <label>Subtotal</label>
+
+          <div class="totals">
+            <div class="totals-item">
+              <label>Subtotal</label>
               <div class="totals-value" id="cart-subtotal"></div>
-          </div>
-          <div class="totals-item">
-            <label>Tax (10%)</label>
+            </div>
+            <div class="totals-item">
+              <label>Tax (10%)</label>
               <div class="totals-value" id="cart-tax"></div>
-          </div>
-          <div class="totals-item">
-            <label>Shipping</label>
+            </div>
+            <div class="totals-item">
+              <label>Shipping</label>
               <div class="totals-value" id="cart-shipping"></div>
-          </div>
-          <div class="totals-item totals-item-total">
-            <label>Grand Total</label>
+            </div>
+            <div class="totals-item totals-item-total">
+              <label>Grand Total</label>
               <div class="totals-value" id="cart-total"></div>
-          </div>
+            </div>
             <button class="checkout">Checkout</button>
           </div>
         </div>
-          </div>
+      </div>
     </div>
-  </main>
+  </div>
+
   <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal fade" id="detailModal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -248,16 +180,17 @@
         </div>
         <div class="modal-body">
           <p class="modal-id" hidden="hidden"></p>
-          <img class="modal-image" src="images/reversible-plaid.jpg" alt="reversible plaid scarf">
+          <img class="modal-image" src="images/reversible-plaid.jpg" alt="alt">
           <p class="modal-description"></p>
         </div>
         <div class="modal-footer">
-         <p class="modal-price"></p>
-         <button type="button" class="cart-add" onclick="addToCart">Add to cart</button>
+          <p class="modal-price"></p>
+          <button class="cart-add" data-toggle="modal" data-target="#cartModal">Add to cart</button>
         </div>
       </div>
     </div>
   </div>
+</main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/script.js"></script>
