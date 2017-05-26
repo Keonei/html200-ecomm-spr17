@@ -264,10 +264,6 @@ main {
 #items-container {
   display: flex;
   display: -webkit-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  text-align: center;
-  flex: 0 1 auto;
   max-width: 96%;
 }
 
@@ -304,7 +300,10 @@ section h3 {
 }
 
 .col-xs-6 {
+  flex: 1;
+  flex-grow: 1;
   padding: 2em;
+  margin: .5em;
 }
 
 .details {
