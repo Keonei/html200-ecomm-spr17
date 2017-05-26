@@ -197,7 +197,7 @@ function updateItemElement(cartItem, cartItemElement) {
  **/
 function removeItem(item) {
   alert("remove item " + item.name);
-     item.splice();
+
      recalculateCart();
      refreshBadge();
 }
