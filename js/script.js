@@ -228,7 +228,6 @@ function findIndexOfItemInCart(item) {
 addButton.addEventListener('click', function (e) {
   addToCart(itemImg, itemName, itemPrice)
   {
-
     for (var i in cart) {
       if (cart[i].name === itemName) {
         return;
@@ -237,7 +236,6 @@ addButton.addEventListener('click', function (e) {
       this.name = itemName
       this.price = itemPrice
     };
-
     var itemImg = $(this.parentElement).find("img").attr('src');
     var itemName = $(this.parentElement).find("h3").text();
     var itemPrice = $(this.parentElement).find(".price").text();
