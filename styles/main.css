@@ -388,13 +388,6 @@ h3 {
   clear: both;
 }
 
-.group,
-#shopping-cart,
-.column-labels,
-.product .totals-item {
-  zoom: 1;
-}
-
 .product .modal-price:before,
 .product .prod-line-price:before,
 .totals-value:before {
@@ -569,7 +562,7 @@ h3 {
   #shopping-cart {
     margin: 0;
     padding-top: 20px;
-    border-top: 1px solid $color-border;
+    border-top: 1px solid #eee;
   }
   #cartModal .column-labels {
     display: none;
@@ -577,9 +570,7 @@ h3 {
   #cartModal .prod-image {
     float: right;
     width: auto;
-    img {
-      margin: 0 0 10px 10px;
-    }
+    margin: 0 0 10px 10px;
   }
   #cartModal .prodDescription {
     float: none;
@@ -592,9 +583,7 @@ h3 {
   }
   #cartModal .prod-quantity {
     width: 100px;
-    input {
-      margin-left: 20px;
-    }
+    margin-left: 20px;
   }
   #cartModal .prod-quantity:before {
     content: 'x';
@@ -624,14 +613,12 @@ h3 {
   .product .prod-line-price:before {
     content: 'Item Total: $';
   }
-  .totals {
-    .totals-item {
+  .totals .totals-item {
       label {
         width: 60%;
       }
       .totals-value {
         width: 40%;
-      }
     }
   }
 }
